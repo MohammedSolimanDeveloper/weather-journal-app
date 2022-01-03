@@ -1,10 +1,10 @@
 /* Global Variables */
 const baseUrl = 'http://api.openweathermap.org/data/2.5/weather';
-const apiKey = 'f01e71af1dc3f20125815051f11e935a&units=imperial';
+const apiKey = 'b03d9420e2391166aa75aa93a1ba32a9';
 
 // Create a new data instance dynamically with js
 let d = new Date();
-let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
+let newDate = (d.getMonth()+1) + '.' + d.getDate() + '.' + d.getFullYear();
 
 const userInfo = document.getElementById('userInfo');
 
@@ -85,7 +85,7 @@ function performAction(e) {
             // Update new entry Values
             if (allData.date !== undefined && allData.temp !== undefined && allData.content !== undefined) {
                 document.getElementById('date').innerHTML = allData.date;
-                document.getElementById('temp').innerHTML = allData.temp + ' degree C';
+                document.getElementById('temp').innerHTML = allData.temp+ ' degree C';
                 document.getElementById('content').innerHTML = allData.content;
             }
         } catch (error) {
@@ -101,3 +101,4 @@ function performAction(e) {
             return (kelvin - 273.15).toFixed(2);
         }
     }
+    
